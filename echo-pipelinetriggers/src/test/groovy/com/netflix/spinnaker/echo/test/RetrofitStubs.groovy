@@ -29,11 +29,11 @@ trait RetrofitStubs {
   final Trigger disabledDockerTrigger = new Trigger(false, null, 'git', null, null, null, null, null, null, null, null, null, 'registry', 'repository', 'tag', null, null)
   final Trigger enabledWebhookTrigger = new Trigger(true, null, 'webhook', null, null, null, null, null, null, null, null, null, null, null, null, null, null)
   final Trigger disabledWebhookTrigger = new Trigger(false, null, 'webhook', null, null, null, null, null, null, null, null, null, null, null, null, null, null)
-  final Trigger nonWebhookTrigger = Trigger.builder().enabled(true).source('not webhook').build()
-  final Trigger webhookTriggerWithConstraints = Trigger.builder().enabled(true).source('webhook').constraints([ "application": "myApplicationName", "pipeline": "myPipeLineName" ]).build()
-  final Trigger webhookTriggerWithoutConstraints = Trigger.builder().enabled(true).source('webhook').constraints().build()
-  final Trigger teamcityTriggerWithConstraints = Trigger.builder().enabled(true).source('teamcity').constraints([ "application": "myApplicationName", "pipeline": "myPipeLineName" ]).build()
-  final Trigger teamcityTriggerWithoutConstraints = Trigger.builder().enabled(true).source('teamcity').constraints().build()
+  final Trigger nonWebhookTrigger = Trigger.builder().enabled(true).type('not webhook').build()
+  final Trigger webhookTriggerWithConstraints = Trigger.builder().enabled(true).type('webhook').constraints([ "application": "myApplicationName", "pipeline": "myPipeLineName" ]).build()
+  final Trigger webhookTriggerWithoutConstraints = Trigger.builder().enabled(true).type('webhook').constraints().build()
+  final Trigger teamcityTriggerWithConstraints = Trigger.builder().enabled(true).type('teamcity').constraints([ "application": "myApplicationName", "pipeline": "myPipeLineName" ]).build()
+  final Trigger teamcityTriggerWithoutConstraints = Trigger.builder().enabled(true).type('teamcity').constraints().build()
 
   private nextId = new AtomicInteger(1)
 
